@@ -1629,7 +1629,7 @@ export default function App() {
           {newPost.location.trim() && (
             <div style={{ marginTop: 8, borderRadius: 12, overflow: "hidden", border: "1px solid #EEE0B0" }}>
               <iframe
-                src={`https://map.kakao.com/?q=${encodeURIComponent(newPost.location)}&map_type=TYPE_MAP`}
+                src={"https://maps.google.com/maps?q=" + encodeURIComponent(newPost.location) + "&t=&z=15&ie=UTF8&iwloc=&output=embed"}
                 width="100%" height="180" style={{ display: "block", border: "none" }}
                 title="카카오 지도"
               />
