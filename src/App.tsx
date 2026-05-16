@@ -973,7 +973,6 @@ export default function App() {
               <div key={f.k} style={{ marginBottom: 12 }}><label style={S.lbl}>{f.l}</label><input style={S.inp} type={f.t} placeholder={f.p} value={loginForm[f.k]} onChange={e => setLoginForm({ ...loginForm, [f.k]: e.target.value })} onKeyDown={e => e.key === "Enter" && handleLogin()} /></div>
             ))}
             <div style={{ marginTop: 8 }}><button style={S.btn()} onClick={handleLogin}>로그인</button></div>
-            <div style={{ marginTop: 16, padding: "12px 14px", background: "#FFFCF2", borderRadius: 10, fontSize: 12, color: "#bbb", lineHeight: 1.8, textAlign: "center" }}>일반: user1@test.com / 1234<br />관리자: admin@test.com / 1234</div>
           </div>
         ) : (
           <div>
@@ -1629,7 +1628,7 @@ export default function App() {
           {newPost.location.trim() && (
             <div style={{ marginTop: 8, borderRadius: 12, overflow: "hidden", border: "1px solid #EEE0B0" }}>
               <iframe
-                src={"https://maps.google.com/maps?q=" + encodeURIComponent(newPost.location) + "&t=&z=15&ie=UTF8&iwloc=&output=embed"}
+                src={`https://map.kakao.com/?q=${encodeURIComponent(newPost.location)}&map_type=TYPE_MAP`}
                 width="100%" height="180" style={{ display: "block", border: "none" }}
                 title="카카오 지도"
               />
